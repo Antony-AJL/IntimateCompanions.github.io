@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>My Website</title>
-    </head>
-    <body>
-        <h1>Welcome to my website!</h1>
-        <p>This is a paragraph.</p>
-    </body>
+<head>
+    <title>My Webpage</title>
+</head>
+<body>
+    <!-- Your website's content goes here -->
+
+    <!-- Paste the JavaScript code for Botpress webchat here -->
+    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+    <script>
+        window.botpressWebChat.init({
+            "botId": "51bad5c7-32a3-4797-9e4a-a202c1f8a214",,
+            "clientId": "51bad5c7-32a3-4797-9e4a-a202c1f8a214",
+            "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
+            "messagingUrl": "https://messaging.botpress.cloud",
+            "botName": "Test",
+            "containerWidth": "100%25",
+            "layoutWidth": "100%25",
+            "hideWidget": true,
+            "disableAnimations": true,
+        });
+        window.botpressWebChat.onEvent(
+            function () {
+                window.botpressWebChat.sendEvent({ type: "show" });
+            },
+            ["LIFECYCLE.LOADED"]
+        );
+    </script>
+</body>
 </html>
